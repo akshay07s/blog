@@ -1,0 +1,277 @@
+            *{
+                margin: 0px;
+                box-sizing: border-box;
+            }
+            
+            ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            }
+
+            .left {
+            float: left;
+            margin-left: 1%;
+            }
+            .home:hover{
+                color:rgb(0, 121, 129);
+            }
+
+            li a {
+            margin: 10px;
+            display: block;
+            color: black;
+            text-align: center; 
+            text-decoration: none;
+            }
+            .home{
+                font-family:OCR A Std, monospace;
+            }
+            .right{
+                float:right;                
+                margin-right: 1%;
+            }
+            .right button , .right input{
+                margin-top: 10px;
+            }
+            #logo{
+                width: 30px;
+                height: 30px;
+            }
+            .main{
+                position: absolute;
+                margin: 10px;
+                margin-top: 0px;
+            }
+            .main-top{
+                position: absolute;
+                top:25%;
+                left:31%;
+            }
+            .text{
+                position:absolute;
+                color: white;
+                transform: translate(-50%, -50%);
+            }
+                        
+            .centered {
+                top: 35%;
+                left: 40%;
+                
+            }
+            .bottom{
+                position: absolute;
+                top:38%;
+                left: 30%;
+            }
+            #button1{
+                position:absolute;
+                top:50%;
+                left:40%;
+            }
+            #button2{
+                position:absolute;
+                top:50%;
+                left:50%;
+            }
+            .box{
+                font-size: 30px;
+                position: absolute;
+                color: white;
+            }
+            .signup {
+              display: grid;
+              grid-template-columns: 20% 22% 38% 20%;
+              grid-template-rows: 600px;
+              padding: 10px;
+              align-content: center;
+            }
+            .signup p, .login p{
+                font-size: 25px;
+            }
+            .input-signup{
+                width: 80%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: whitesmoke;
+            }
+            input,textarea{
+                border: 2px solid rgb(0, 121, 129);
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                border-radius: 4px;
+                width: 100%;
+                height:30px
+            }
+            .left_signup {
+                color: white;
+                padding: 40px;
+                background-color:  rgb(0, 121, 129);
+                top:30%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+            .left_signup a{
+                position:relative;
+                text-decoration: none;
+                color:white;
+                font-size: 30px;
+                left:35%;
+            }
+            .right_signup {
+                color:  rgb(0, 121, 129);
+                text-align: center;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                padding: 40px;
+            }
+            
+            .login {
+                display: grid;
+                grid-template-columns: 20% 38% 22% 20%;
+                grid-template-rows: 600px;
+                padding: 10px;
+                align-content: center;
+              }
+              
+            .right_login a{
+                position:relative;
+                text-decoration: none;
+                color:white;
+                font-size: 30px;
+                left:35%;
+            }
+            .right_login{
+                color: white;
+                padding: 40px;
+                background-color:  rgb(0, 121, 129);
+                top:30%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+            }
+            .left_login{
+                color:  rgb(0, 121, 129);
+                text-align: center;
+                padding: 40px;
+                top:30%;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+            }
+            .alert {
+                padding: 5px;
+                padding-left: 27px;
+                color: white;
+                background-color: rgba(255, 0, 0, 0.5);
+                transition: opacity 0.6s;
+              }
+              
+              .alert.success {background-color: #4caf4fa8;}
+              .alert.info {background-color: #2195f3a8;}
+              .alert.warning {background-color: #fa0025b6;}
+              
+              .closebtn {
+                margin-right: 20px;
+                color: white;
+                font-weight: bold;
+                float: right;
+                font-size: 22px;
+                line-height: 15px;
+                cursor: pointer;
+                transition: 0.3s;
+              }
+              
+              .closebtn:hover {
+                color: black;
+              }
+              .card {
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+                transition: 0.3s;
+                width: 100%;
+                background-color:linear-gradiant(to right, #1c92d2,#f2fcfe);
+                text-align: center;
+              }
+
+              .cardimage:hover{
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+              }
+              
+              .card:hover {
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+              }
+              
+              .cardcontainer {
+                padding: 2px 16px;
+                overflow: hidden;
+
+              }
+              .cardcontainer h3{
+                  font-size: 20px;
+              }
+              
+            .grid-card {
+                margin-top: 5px;
+                display: grid;
+                grid-template-columns:20% 20% 40% 20%;
+                grid-template-rows: 200px;
+            }
+            .bloggrid{
+                display: grid;
+                grid-template-columns: 15% 70% 15%;
+            }            
+            .input-newblog{
+                width: 100%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+                background-color: whitesmoke;
+            }
+            .background{
+                background-image: linear-gradient(to left,#C9D6FF,#E2E2E2);
+            }
+            .grid-read{
+                margin-top: 15px;
+                display: grid;
+                grid-template-columns: 20% 60% 20%;
+            }
+            .read-image{
+                width: 100%;
+                height: 500px;
+            }
+            .desc-read{
+                padding: 50px;
+            }
+            .card-comment{
+                box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.4);
+                transition: 0.3s;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            .card-comment:hover{
+                box-shadow: 0 8px 16px 0 rgba(0,0,0,0.4);
+            }
+            .comment-grid{
+                display: grid;
+                grid-template-columns: 10% 90%;
+            }
+            .userimg{
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+            }
+            .comment-main{
+                padding-left: 50px;
+                padding-right: 50px;
+            }
+            .contact-grid{
+                display: grid;
+                grid-template-columns: 20% 60% 20%;
+            }
+            .reset{
+                display: grid;
+                grid-template-columns: 30% 40% 30%;
+            }

@@ -1,0 +1,25 @@
+{% extends "home/base.html" %}
+ {% block title %}NewBlog{% endblock %}
+ {% block body %}<h1> Add a new blog</h1>
+ <div class=' bloggrid'>
+    <div></div>
+    <div class='input-newblog'>
+            <form action="/blog/newblog/" method='post' enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="title1"></label>
+                <input type="text"  name="title1" placeholder="Title of Blog" required><br><br>
+
+                    <label for="desc1"></label>
+                    <textarea style='width:100%;height:200px;resize:none;' name="desc1" placeholder="Content" required></textarea><br><br>
+
+                    <label for="name1"></label>
+                    <input type="hidden"  name="name1" value='{{request.user}}' readonly required><br><br>
+
+                    <input type="file" id="img" name="image1" accept="image/*"><br><br><br><br>
+                    
+                    <input type="submit" value="Submit" style="width:50%;">
+                </form>
+    </div>
+    <div></div>
+</div>
+ {% endblock  %}
