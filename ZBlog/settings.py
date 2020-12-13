@@ -23,11 +23,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 #SECRET_KEY = 'slqd^n!81p9zc4&rf3j0+wsv0o=i8fr%5n5b1x8^)auw_88u!d'
-# 4a964cc3bed07d5a124e861f71f22bc9791cb4ff4d835f23
 SECRET_KEY =os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
 
 ALLOWED_HOSTS = ['zblog07.herokuapp.com']
 
@@ -142,8 +141,8 @@ EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST='smtp.gmail.com'
 EMAIL_PORT= 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'yt4009ak47@gmail.com'
-EMAIL_HOST_PASSWORD = 'nsyerodgvbqifujo'
+EMAIL_HOST_USER = os.environ.get('EMAIL_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 
 django_heroku.settings(locals())
 
