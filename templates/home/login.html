@@ -1,38 +1,39 @@
 {% extends 'home/base.html' %}
 {% block title %}LogIn
-{% endblock  %}
+{% endblock %}
 
 {% block body %}
 {% load static %}
-<div class='login'>
+<div class='main'>
+    <img src={% static "home/background2.jpg" %} width="100%">
+    <div class='login'>
+        <div class='left_login'>
+            <h1>LogIn</h1><br>
+            <p>HI, THERE</p>
+            <p>You can LogIn here</p>
+            <br>
+            <br>
+            <div class='input-login'>
 
-    <div></div>
-    <div class='left_login'>
-        <h1>LogIn</h1><br>
-        <p>HI, THERE</p>
-        <p>You can LogIn here</p>
-        <br>
-        <br>
-        <div class='input-login'>
+                <form action="/userlogin/" method='post'>
+                    {% csrf_token %}
+                    <label for="userlogin"></label>
+                    <input type="text" id="userlogin" name="userlogin" placeholder="Username" required><br><br>
 
-            <form action="/userlogin/" method='post'>
-            {% csrf_token %}
-                <label for="userlogin"></label>
-                <input type="text" id="userlogin" name="userlogin" placeholder="username" required><br><br>
-
-                <label for="passlogin"></label>
-                <input type="password" id="passlogin" name="passlogin" placeholder="Password" required><br><br><br><br>
-                <input type="submit" value="Submit" style="width:50%;">
-                <a href='/password-reset/' style='text-decoration:none;'>Forget password?</a>
+                    <label for="passlogin"></label>
+                    <input type="password" id="passlogin" name="passlogin" placeholder="Password"
+                        required><br><br><br><br>
+                    <input type="submit" value="Submit" style="width:50%;"><br>
+                    <a href='/password-reset/' style='text-decoration:none;color:white;'>Forget password?</a>
+            </div>
         </div>
-    </div>
 
-    <div class='right_login'>
-        <h1>NEW HERE?</h1><br>
-        <p>Sign up and create your own Blogs</p><br>
-        <a href='/signup'>SignUp</a>
-    </div>
+        <div class='right_login'>
+            <h1>NEW HERE?</h1><br>
+            <p>Sign up and create your own Blogs</p><br>
+            <a href='/signup'>SignUp</a>
+        </div>
 
-    <div></div>
+    </div>
 </div>
-{% endblock  %}
+{% endblock %}

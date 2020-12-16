@@ -8,7 +8,7 @@
       {% load humanize %}
       <div></div>
       <div>
-         <p>by <i style='font-size:20px;'>{{readpost.name}}</i>
+         <p>by <b><i>{{readpost.name}}</i></b>
             <span>{{readpost.date | naturaltime}} </span></p>
          <br><img class='read-image' src="{{ readpost.image.url }}" alt="PostImg">
          <h3 class='desc-read'>{{readpost.desc}}</h3>
@@ -18,8 +18,8 @@
             <form action='/blog/blogComment/' method='post'>
                {% csrf_token %}
                <input type='text' name='comment' placeholder='comment'>
-               <input type='hidden' name='postId' value='{{readpost.post_id}}'>
-               <input type='submit' value='submit'>
+               <input type='hidden' name='postId' value='{{readpost.post_id}}'><br><br>
+               <input type='submit' value='submit' style='width:20%;'>
             </form>
             <br>
 

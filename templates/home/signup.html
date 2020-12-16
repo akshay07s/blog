@@ -1,44 +1,49 @@
 {% extends 'home/base.html' %}
 {% block title %}SignUp
-{% endblock  %}
+{% endblock %}
 {% block body %}
-<div class='signup'>
-    <div></div>
-    <div class='left_signup'>
-        <h1>ALREADY HAVE AN ACCOUNT?</h1><br>
-        <p>Log in and go to your Dashboard.</p><br>
-        <a href='/userlogin'>LogIn</a>
-    </div>
-
-    <div class='right_signup'>
-        <h1>SIGN UP</h1><br>
-        <p>We are happy you are here.
-            <br>
-            <br>
-        <div class='input-signup'>
-
-            <form action="/signup/" method='post'>
-            {% csrf_token %}
-                <label for="username"></label>
-                <input type="text" id="username" name="username" autocomplete='off' placeholder="Username" required><br><br>
-
-                <label for="fname"></label>
-                <input type="text" id="name" name="fname" autocomplete='off' placeholder="First Name" required><br><br>
-                <label for="lname"></label>
-                <input type="text"  name="lname" autocomplete='off' placeholder="Last Name" required><br><br>
-
-                <label for="email"></label>
-                <input type="email" id="eamil" name="email" autocomplete='off' placeholder="Email address" required><br><br>
-
-                <label for="pass1"></label>
-                <input type="password" id="pass1" name="pass1" placeholder="Password" required><br><br>
-
-                <label for="pass2"></label>
-                <input type="password" id="pass2" name="pass2" placeholder="Re-enter password" required><br><br><br><br>
-                <input type="submit" value="Submit" style="width:50%;">
+{% load static %}
+<div class='main'>
+    <img src={% static "home/background2.jpg" %} width="100%">
+    <div class='signup'> 
+        <div class='left_signup'>
+            <h1>ALREADY HAVE AN ACCOUNT?</h1><br>
+            <p>Log in and go to your Dashboard.</p><br>
+            <a href='/userlogin'>LogIn</a>
         </div>
-    </div>
 
-    <div></div>
+        <div class='right_signup'>
+            <h1>SIGN UP</h1><br>
+            <p>We are happy you are here.
+                <br>
+                <br>
+            <div class='input-signup'>
+
+                <form action="/signup/" method='post'>
+                    {% csrf_token %}
+                    <label for="username"></label>
+                    <input type="text" id="username" name="username" autocomplete='off' placeholder="Username"
+                        required><br><br>
+
+                    <label for="fname"></label>
+                    <input type="text" id="name" name="fname" autocomplete='off' placeholder="First Name"
+                        required><br><br>
+                    <label for="lname"></label>
+                    <input type="text" name="lname" autocomplete='off' placeholder="Last Name" required><br><br>
+
+                    <label for="email"></label>
+                    <input type="email" id="eamil" name="email" autocomplete='off' placeholder="Email address"
+                        required><br><br>
+
+                    <label for="pass1"></label>
+                    <input type="password" id="pass1" name="pass1" placeholder="Password" required><br><br>
+
+                    <label for="pass2"></label>
+                    <input type="password" id="pass2" name="pass2" placeholder="Re-enter password"
+                        required><br><br><br><br>
+                    <input type="submit" value="Submit" style="width:50%;">
+            </div>
+        </div> 
+    </div>
 </div>
-{% endblock  %}
+{% endblock %}

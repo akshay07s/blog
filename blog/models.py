@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Blogpost(models.Model):
     post_id=models.AutoField(primary_key=True)
     title=models.CharField(max_length=50)
-    desc=models.CharField(max_length=500)
+    desc=models.CharField(max_length=5000)
     name=models.CharField(max_length=20)
     date=models.DateTimeField(auto_now_add=True)
     image=models.ImageField(upload_to='blog/images')

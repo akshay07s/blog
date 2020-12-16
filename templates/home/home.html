@@ -3,9 +3,11 @@
  {% block body %}
             <div class="main">
                 <img src="static/home/background{{a}}.jpg" width="100%">
-                <h1 class='main-top text'>Ideas are easy, Implementation is hard.</h1><br>
+                <div class='text-main'>
+                <h1 class='main-top text'>Ideas are easy, Implementation is hard.</h1><br><br>
                 <h2 class='centered text'>Write. Rewrite. When not writing or rewriting, read. I know of no shortcuts.</h2>
                 <h2 class='bottom text'><i> Larry L. King</i></h2>
+                </div>
                 {% if not user.is_authenticated %}
                 <a href="/userlogin" id='button1'><p class='box'>LogIn</p></a>
                 <a href='/signup' id='button2'><p class='box'>SignUp</p></a>
