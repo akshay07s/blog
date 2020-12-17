@@ -1,0 +1,47 @@
+{% extends "home/base.html" %}
+{% block title %}ReadBlog{% endblock %}
+{% block body %}
+<div class='background'>
+   <h2 style='text-align:center;'>{{readpost.title}}</h2>
+
+   <div class='grid-read'>
+      {% load humanize %}
+      <div></div>
+      <div>
+         <p>by <b><i>{{readpost.name}}</i></b>
+            <span>{{readpost.date | naturaltime}} </span></p>
+         <br><img class='read-image' src="{{ readpost.image.url }}" alt="PostImg">
+         <h3 class='desc-read'>{{readpost.desc}}</h3>
+         <h2>Comments</h2><br>
+         
+         <div class='comment-main'>
+            <form action='/blog/blogComment/' method='post'>
+               {% csrf_token %}
+               <input type='text' name='comment' placeholder='comment'>
+               <input type='hidden' name='postId' value='{{readpost.post_id}}'><br><br>
+               <input type='submit' value='submit' style='width:20%;'>
+            </form>
+            <br>
+
+            {% for comment in comment %}
+            <div>
+               {% load static %}
+               {% load humanize %}
+               <div class='comment-grid'>
+                  <img src="{% static 'home/userimg.png'%} " alt='user' class='userimg'>
+                  <div class='card-comment'>
+                     <h4>{{ comment.user }} <span> {{comment.timestamp| naturaltime}} </span></h4>
+                     <p>{{ comment.comment }}</p>
+                  </div>
+               </div>
+            </div>
+            {% endfor %}
+         </div>
+         <br><br><br><br><br><br><br><br>
+
+
+         <div></div>
+      </div>
+   </div>
+</div>
+{% endblock  %}

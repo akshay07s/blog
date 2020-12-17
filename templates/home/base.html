@@ -1,0 +1,71 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link href="{% static 'css/base.css' %}" rel="stylesheet">
+    
+</head>
+
+<body>
+    {% for message in messages %}
+    <div class="alert {{message.tags}}">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+        <strong>{{message}}</strong>
+        {% endfor %}
+    </div>
+    <div>
+        <div class='navigation'>
+            <ul>
+                <li class="left"><a href="/">
+                        <h1 class='home'>ZBlog</h1>
+                    </a></li>
+                    <li class="right"><a href="/contact/"><img id="logo" src="{%static 'home/head_phone.svg'%} "
+                            alt='contact'></a></li>
+                    {% if user.is_authenticated %}
+                    
+                    <li class="left"><a href="/blog/">
+                        <h1 class='home'>Home</h1>
+                    </a></li>
+                    <li class="left"><a href="/blog/newblog/">
+                        <h1 class='home'>New</h1>
+                    </a></li>
+                    <li class="left"><a href="/blog/myblog">
+                        <h1 class='home'>MyBlog</h1>
+                    </a></li>
+                    
+                    <li class="right"><a href="/userlogout/">
+                        <h1 class='home'>LogOut</h1>
+                    </a></li>
+                    <form action='/blog/search/' method='get'>
+                    <li class='right'>
+                    <button type="submit"><h1>Search</h1></button>
+                    </li>
+                    <li class="right">
+                    <input type="text" placeholder="Search.." autocomplete='off' name="search">
+                    </li>
+                    </form>
+                    {% else %}
+                    <li class="right"><a href="/signup/">
+                        <h1 class='home'>SignUp</h1>
+                    </a></li>
+                    <li class="right"><a href="/userlogin/">
+                        <h1 class='home'>LogIn</h1>
+                    </a></li>
+                    {% endif %}
+
+                
+            </ul>
+
+        </div>
+        {% block body%}
+        {% endblock %}
+        
+    </div>
+</body>
+
+</html>

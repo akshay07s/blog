@@ -1,0 +1,29 @@
+{% extends "home/base.html" %}
+ {% block title %}BlogPost{% endblock %}
+ {% block body  %}
+<div class='background'>
+<h1>{{myblog|length}} </h1>
+ {% for item in myblog %}
+    <div class=" grid-card">
+        <div></div>
+        <img class='cardimage' src="{{item.image.url}}" alt="PostImg" style="width: 95%;height: 95%;position: relative;top: 3%;"">
+        
+        <div class='card'>
+            
+            <div class="cardcontainer">  
+            {% load humanize %}
+                <h3><b>{{item.title}}</b></h3>
+                <span><i>by {{item.name }} </i>
+                {{item.date | naturaltime}}  </span>
+                <p>____________________________________________________</p>
+                
+                <p>{{item.desc|truncatewords:30}}</p> 
+                
+            </div>  <br>
+            <a href='/blog/read/{{item.post_id}}' style='text-decoration: none; color:#004e92;'>continue reading</a>
+        </div>
+        <div></div>
+    </div><br>
+ {% endfor %}
+ </div>
+ {% endblock  %}
