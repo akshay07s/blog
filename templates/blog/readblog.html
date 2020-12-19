@@ -6,11 +6,12 @@
 
    <div class='grid-read'>
       {% load humanize %}
+      {% load static %}
       <div></div>
       <div>
          <p>by <b><i>{{readpost.name}}</i></b>
             <span>{{readpost.date | naturaltime}} </span></p>
-         <br><img class='read-image' src="{{ readpost.image.url }}" alt="PostImg">
+         <br><img class='read-image' src="{% static 'blog' %}{{readpost.image.url}}" alt="PostImg">
          <h3 class='desc-read'>{{readpost.desc}}</h3>
          <h2>Comments</h2><br>
          

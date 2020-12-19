@@ -6,7 +6,8 @@
  {% for item in myblog %}
     <div class=" grid-card">
         <div></div>
-        <img class='cardimage' src="{{item.image.url}}" alt="PostImg" style="width: 95%;height: 95%;position: relative;top: 3%;"">
+        {% load static %}
+        <img class='cardimage' src="{% static 'blog' %}{{readpost.image.url}}" alt="PostImg" style="width: 95%;height: 95%;position: relative;top: 3%;"">
         
         <div class='card'>
             
